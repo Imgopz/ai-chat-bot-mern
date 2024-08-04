@@ -5,6 +5,10 @@ const PORT = process.env.PORT || 5000;
 
 connectToDatabase()
   .then(() => {
-    app.listen(PORT, () => console.log("Server started..."));
+    app.listen(PORT, () =>
+      console.log("Server started... and the database is connected!")
+    );
   })
   .catch((err) => console.log(err));
+
+// npm run dev
