@@ -8,5 +8,8 @@ It's a completely secure application using JWT Tokens, HTTP-Only Cookies, Signed
 
 Contributions are welcome
 
+Clone, cd into /backend folder then run below commands
+
 npm i
+
 npm run dev
