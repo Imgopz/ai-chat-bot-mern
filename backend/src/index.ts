@@ -11,4 +11,5 @@ connectToDatabase()
   })
   .catch((err) => console.log(err));
 
+// npm i
 // npm run dev
