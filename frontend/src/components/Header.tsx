@@ -13,7 +13,40 @@ const Header = () => {
     >
       <Toolbar sx={{ display: "flex" }}>
         <Logo />
-        <div>{auth?.isLoggedIn ? <></> : <></>}</div>
+        <div>
+          {auth?.isLoggedIn ? (
+            <>
+              <NavigationLink
+                bg="#00fffc"
+                to="/chat"
+                text="Go to chat"
+                textColor="black"
+              />
+              <NavigationLink
+                bg="#51538f"
+                textColor="white"
+                to="/"
+                text="logout"
+                onClick={auth.logout}
+              />
+            </>
+          ) : (
+            <>
+              <NavigationLink
+                bg="#00fffc"
+                to="/login"
+                text="Login"
+                textColor="black"
+              />
+              <NavigationLink
+                bg="#51538f"
+                textColor="white"
+                to="/signup"
+                text="Signup"
+              />
+            </>
+          )}
+        </div>
       </Toolbar>
     </AppBar>
   );

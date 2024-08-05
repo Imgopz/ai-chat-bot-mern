@@ -14,7 +14,7 @@ const Logo = () => {
     >
       <Link to={"/"}>
         <img
-          src="logo.png"
+          src="openai.png"
           alt="chatbot"
           width={"30px"}
           height={"30px"}
