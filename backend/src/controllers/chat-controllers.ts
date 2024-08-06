@@ -33,7 +33,7 @@ export const generateChatCompletion = async (
 
     // get the lates response
     const chatResponse = await openai.createChatCompletion({
-      model: "gpt-3.5-turbot",
+      model: "gpt-3.5-turbo",
       messages: chats,
     });
 
