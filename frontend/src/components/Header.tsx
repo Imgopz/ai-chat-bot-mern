@@ -3,9 +3,12 @@ import { AppBar, Toolbar } from "@mui/material";
 import Logo from "./shared/Logo";
 import { useAuth } from "../context/AuthContext";
 import NavigationLink from "./shared/NavigationLink";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const auth = useAuth();
+
+  const location = useLocation();
 
   return (
     <AppBar
@@ -16,12 +19,14 @@ const Header = () => {
         <div>
           {auth?.isLoggedIn ? (
             <>
-              <NavigationLink
-                bg="#00fffc"
-                to="/chat"
-                text="Go to chat"
-                textColor="black"
-              />
+              {location.pathname !== "/chat" && (
+                <NavigationLink
+                  bg="#00fffc"
+                  to="/chat"
+                  text="Go to chat"
+                  textColor="black"
+                />
+              )}
               <NavigationLink
                 bg="#51538f"
                 textColor="white"
