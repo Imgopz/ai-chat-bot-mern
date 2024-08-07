@@ -4,7 +4,11 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import ChatItem from "../components/chat/ChatItem";
 import { IoMdSend } from "react-icons/io";
-import { getUserChats, sendChatRequest } from "../helpers/api-communicator";
+import {
+  deleteUserChats,
+  getUserChats,
+  sendChatRequest,
+} from "../helpers/api-communicator";
 import toast from "react-hot-toast";
 
 type Message = {
@@ -30,6 +34,17 @@ const Chat = () => {
     setChatMessages([...chatData.chats]);
   };
 
+  const handleDeleteChats = async () => {
+    try {
+      toast.loading("Clearing Chats", { id: "deletechats" });
+      await deleteUserChats();
+      setChatMessages([]);
+      toast.success("Chats cleared successfully!", { id: "deletechats" });
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to clear chats!", { id: "deletechats" });
+    }
+  };
   useLayoutEffect(() => {
     if (auth?.isLoggedIn && auth.user) {
       toast.loading("Loading Chats", { id: "loadchats" });
@@ -43,7 +58,7 @@ const Chat = () => {
           toast.error("Loading failed", { id: "loadchats" });
         });
     }
-  }, []);
+  }, [auth]);
 
   return (
     <Box
@@ -94,6 +109,7 @@ const Chat = () => {
             Education, etc. But avoid sharing personal information{" "}
           </Typography>
           <Button
+            onClick={handleDeleteChats}
             sx={{
               width: "200px",
               color: "white",
