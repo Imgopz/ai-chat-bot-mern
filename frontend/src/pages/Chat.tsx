@@ -36,6 +36,13 @@ const Chat = () => {
     setChatMessages([...chatData.chats]);
   };
 
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      handleSubmit();
+    }
+  };
+
   const handleDeleteChats = async () => {
     try {
       toast.loading("Clearing Chats", { id: "deletechats" });
@@ -194,6 +201,7 @@ const Chat = () => {
               color: "white",
               fontSize: "20px",
             }}
+            onKeyDown={handleKeyPress}
           />
           <IconButton onClick={handleSubmit} sx={{ color: "white", mx: 1 }}>
             <IoMdSend />
