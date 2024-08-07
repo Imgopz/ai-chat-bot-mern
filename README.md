@@ -1,4 +1,4 @@
-# MERN Stack AI Chatbot
+### MERN Stack AI Chatbot
 
 This is an AI Chatbot application, by using MERN Stack and OpenAI API.
 
