@@ -1,12 +1,10 @@
 # MERN Stack AI Chatbot
 
-This is an AI Chatbot application, inspired by ChatGPT, by using MERN Stack and OpenAI
+This is an AI Chatbot application, by using MERN Stack and OpenAI
 
-It's a customized chatbot where each message of the user is stored in DB and can be retrieved and deleted.
+It's a customized chatbot where each message of the user is stored in DB and can be retrieved and deleted, but no previous conversation can be viewed.
 
-It's a completely secure application using JWT Tokens, HTTP-Only Cookies, Signed Cookies, Password Encryption, and Middleware Chains.
-
-Contributions are welcome
+This application is using JWT Tokens, HTTP-Only Cookies, Signed Cookies, Password Encryption, and Middleware Chains.
 
 Step 0a: Create a mongo db and get the url with secret embedded
 
