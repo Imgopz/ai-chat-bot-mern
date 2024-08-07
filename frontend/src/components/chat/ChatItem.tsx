@@ -63,6 +63,20 @@ const ChatItem = ({
         {/* {auth?.user?.name.split(" ")[1][0]} */}
       </Avatar>
       <Box>
+        {!messageBlocks && <Typography fontSize={"20px"}>{content}</Typography>}
+        {messageBlocks &&
+          messageBlocks.length &&
+          messageBlocks.map((block) =>
+            isCodeBlock(block) ? (
+              <SyntaxHighlighter style={coldarkDark} language="javascript">
+                {block}
+              </SyntaxHighlighter>
+            ) : (
+              <Typography fontSize={"20px"}>{block}</Typography>
+            )
+          )}
+      </Box>
+      <Box>
         <Typography fontSize={"20px"}>{content}</Typography>
       </Box>
     </Box>
