@@ -76,9 +76,9 @@ const ChatItem = ({
             )
           )}
       </Box>
-      <Box>
+      {/* <Box>
         <Typography fontSize={"20px"}>{content}</Typography>
-      </Box>
+      </Box> */}
     </Box>
   );
 };
